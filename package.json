@@ -1,0 +1,25 @@
+{
+  "name": "byteman",
+  "version": "1.0.0",
+  "description": "Display bytes in a human readable format: KB, MB, GB, TB, PB, EB, ZB, YB",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidgatti/byteman"
+  },
+  "bin": {
+    "byteman": "./index.js"
+  },
+  "keywords": [
+    "bytes",
+    "human",
+    "convert",
+    "format"
+  ],
+  "author": {
+    "name": "David Gatti",
+    "email": "npm@gatti.pl",
+    "url": "https://github.com/davidgatti"
+  },
+  "license": "MIT"
+}
