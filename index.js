@@ -1,10 +1,7 @@
-
-console.log(format_bytes(100000000000))
-
 //
 //	Convert bytes to a human readable form
 //
-function format_bytes(bytes, decimals)
+module.exports = function(bytes, decimals)
 {
 	//
 	//	If the size is 0, then we can stop right away.
@@ -30,34 +27,30 @@ function format_bytes(bytes, decimals)
 	let sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
 	//
-	//	returns the logarithm of a with base b
+	//	Find the log with base of e
 	//
-	//	Logarithms find the cause for an effect, i.e the input for some output
-	//
-	//	Find natural log of bytes
-	//
-	//	e = natureal languege of growth
-	//
-	//	Find the cause of the result
 	let bytes_log = Math.log(bytes);
 
 	//
-	//	Find the cause of the result
+	//	Find the log with base of e
 	//
 	let k_log = Math.log(k);
 
 	//
-	// divide the two
+	// Divide the two
 	//
 	let base = bytes_log / k_log;
 
 	//
-	//	Remove the decimal position and round up the value
+	//	Remove the decimal position and round up the value.
+	//
+	//	This value will be used to determine the human readable size should be
+	//	selected from the sizes array.
 	//
 	let i = Math.floor(base);
 
 	//
-	// calculates the power
+	// Calculates the power
 	//
 	let power = Math.pow(k, i)
 
@@ -76,7 +69,7 @@ function format_bytes(bytes, decimals)
 	//
 	let fpn = parseFloat(formated_nr)
 
-	console.log(bytes_log, k_log, base, i, power, human_form, fpn)
+	//console.log(bytes_log, k_log, base, i, power, human_form, fpn)
 
 	//
 	// -> Return the human readable byte cont.

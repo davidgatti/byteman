@@ -7,8 +7,11 @@
     "type": "git",
     "url": "https://github.com/davidgatti/byteman"
   },
-  "bin": {
-    "byteman": "./index.js"
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node test.js"
   },
   "keywords": [
     "bytes",
