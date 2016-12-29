@@ -10,6 +10,7 @@
   "files": [
     "index.js"
   ],
+  "main": "./index",
   "scripts": {
     "test": "node test.js"
   },
