@@ -17,9 +17,9 @@ module.exports = function(bytes, decimals)
 	let k = 1000;
 
 	//
-	//	Set how many position after decimal to show
+	//	Set how many position after decimal to show. The default is 3
 	//
-	let decimal = decimals + 1 || 3;
+	let decimal = decimals || 3;
 
 	//
 	//	Array with all the possible formats.
@@ -52,7 +52,7 @@ module.exports = function(bytes, decimals)
 	//
 	// Calculates the power
 	//
-	let power = Math.pow(k, i)
+	let power = Math.pow(k, i);
 
 	//
 	//	Convert bytes in to a human readable size
@@ -67,7 +67,7 @@ module.exports = function(bytes, decimals)
 	//
 	// parses a string argument and returns a floating point number
 	//
-	let fpn = parseFloat(formated_nr)
+	let fpn = parseFloat(formated_nr);
 
 	//console.log(bytes_log, k_log, base, i, power, human_form, fpn)
 
