@@ -6,6 +6,16 @@ Byteman is short for "bytes to human" which is a tool to convert a number, norma
 
 # Example
 
+```
+let byteman = require('byteman');
+
+let human_form = byteman(10000);
+let human_form_decima = byteman(10000, 2);
+
+console.log(human_form)
+console.log(human_form_decima)
+```
+
 # Disclaimer
 
 If found this beautiful solution on [Stackoverflow](http://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript) made by the user Aliceljm. I liked this approach so much that I decided to make it in to a module, deconstruct the code, understand it and explain it to you.
