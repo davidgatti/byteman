@@ -27,32 +27,28 @@ module.exports = function(bytes, decimals)
 	let sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
 	//
-	//	Find the log with base of e
+	//	Set a variable that will count the iterations
 	//
-	let bytes_log = Math.log(bytes);
+	let x = 0;
 
 	//
-	//	Find the log with base of e
+	//	Copy the bytes that we go, so we can use them later on
 	//
-	let k_log = Math.log(k);
+	let bytes_copy = bytes;
 
 	//
-	// Divide the two
+	//	Divide by K and see how many times we'll be able to divide
 	//
-	let base = bytes_log / k_log;
-
-	//
-	//	Remove the decimal position and round up the value.
-	//
-	//	This value will be used to determine the human readable size should be
-	//	selected from the sizes array.
-	//
-	let i = Math.floor(base);
+  	while (bytes_copy >= k)
+  	{
+    	bytes_copy /= k;
+    	x++;
+    }
 
 	//
 	// Calculates the power
 	//
-	let power = Math.pow(k, i);
+	let power = Math.pow(k, x);
 
 	//
 	//	Convert bytes in to a human readable size
@@ -69,10 +65,8 @@ module.exports = function(bytes, decimals)
 	//
 	let fpn = parseFloat(formated_nr);
 
-	//console.log(bytes_log, k_log, base, i, power, human_form, fpn)
-
 	//
 	// -> Return the human readable byte cont.
 	//
-	return fpn + ' ' + sizes[i];
+	return fpn + ' ' + sizes[x];
 }
