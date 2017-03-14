@@ -1,7 +1,7 @@
 //
 //	Convert bytes to a human readable form
 //
-module.exports = function(bytes, decimals)
+module.exports = function(bytes, decimals, format)
 {
 	//
 	//	If the size is 0, then we can stop right away.
@@ -10,6 +10,8 @@ module.exports = function(bytes, decimals)
 	{
 		return '0 Byte';
 	}
+
+	format = format || false;
 
 	//
 	//	Convert bytes to kilobytes
@@ -39,11 +41,11 @@ module.exports = function(bytes, decimals)
 	//
 	//	Divide by K and see how many times we'll be able to divide
 	//
-  	while (bytes_copy >= k)
-  	{
-    	bytes_copy /= k;
-    	x++;
-    }
+	while (bytes_copy >= k)
+	{
+		bytes_copy /= k;
+		x++;
+	}
 
 	//
 	// Calculates the power
@@ -65,13 +67,15 @@ module.exports = function(bytes, decimals)
 	//
 	let fpn = parseFloat(formated_nr);
 
+	let tail = "";
+
+	if(format)
+	{
+		tail = ' ' + sizes[x];
+	}
+
 	//
 	// -> Return the human readable byte cont.
 	//
-	return pad(fpn, decimal) + ' ' + sizes[x];
-}
-
-function pad(str, max)
-{
-	return str.toString().length < max ? pad(str + "0", max) : str;
+	return fpn + tail;
 }
