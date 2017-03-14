@@ -68,5 +68,10 @@ module.exports = function(bytes, decimals)
 	//
 	// -> Return the human readable byte cont.
 	//
-	return fpn + ' ' + sizes[x];
+	return pad(fpn, decimal) + ' ' + sizes[x];
+}
+
+function pad(str, max)
+{
+	return str.toString().length < max ? pad(str + "0", max) : str;
 }
