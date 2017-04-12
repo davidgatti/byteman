@@ -6,7 +6,7 @@ Byteman is short for "bytes to human" which is a tool to convert a number, norma
 
 # Example
 
-```
+```javascript
 let byteman = require('byteman');
 
 let human_form = byteman(10000);
