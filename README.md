@@ -1,3 +1,10 @@
+[![downloads][downloads-badge]][npm-stat]
+
+[downloads-badge]: https://img.shields.io/npm/dm/byteman.svg?style=flat-square
+[npm-stat]: http://npm-stat.com/charts.html?package=byteman&from=2016-04-01
+
+---
+
 # 🤖 Byteman
 
 Display bytes in a human readable format: KB, MB, GB, TB, PB, EB, ZB, YB
